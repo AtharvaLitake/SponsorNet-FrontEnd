@@ -1,0 +1,48 @@
+.nav_header
+{
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    margin-left: 5px;
+}
+.bg-body {
+  width: 100% !important;
+  padding: 0%;
+  margin: 0px auto;
+  
+}
+.b {
+  font-size: 20px;
+  color: #fff !important;
+}
+#collasible-nav-dropdown {
+  font-size: 20px;
+  color: #fff !important;
+  background-color: #3E005B;
+}
+#new {
+  background-color: #3E005B;
+}
+.back {
+  background-color: #3E005B !important;
+  color: #fff !important;
+}
+.back:hover {
+  color: #E4A5FF !important;
+}
+.image {
+  height: 60px;
+  width: 60px;
+}
+.bg {
+  background-color: #3E005B;
+  width: 100% !important;
+  background-size: 100%;
+  position: relative;
+  min-height: 12vh;
+  font-size: 20px;
+  display: flex;
+}
+.b:hover {
+  color:  #E4A5FF !important ;
+}

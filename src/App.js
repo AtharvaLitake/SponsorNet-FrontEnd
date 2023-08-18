@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
-
+import { BrowserRouter,Routes,Route,Link} from 'react-router-dom';
+import Home from './Components/Home'
+import Login from './Components/Login'
+import Register from './Components/Register'
+import Main from './Main/Main';
+import Eventform from './Event_details/Eventform';
+import Sdetails from './Sponsor_details/Sdetails';
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+  integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+  crossorigin="anonymous"
+/>
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/' element={<Home></Home>}></Route>
+        <Route path='/main' element={<Main></Main>}></Route>
+        <Route path='/eventDetails' element={<Eventform></Eventform>}></Route>
+        <Route path='/sponsorDetails' element={<Sdetails></Sdetails>}></Route>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,0 +1,50 @@
+.OrganizerDiv
+{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-items: center;
+    align-content: center;
+    justify-content: center;
+    column-gap: 40px;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    background-color:#E4A5FF;
+    margin-top:15px ;
+    padding-bottom: 30px;
+}
+.Organizer_info
+{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+.Organizer_info h2
+{
+    font-size: 40px;
+    text-align: center;
+    color: #3E005B;
+    margin-top: 150px;
+    font-weight: 600;
+}
+.Organizer_info button
+{
+    height: 70px;
+    width: 250px;
+    border-radius: 15px;
+    background-color: #3E005B;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 18px;
+    border: none;
+}
+.Organizer_logo img
+{
+    height: 450px;
+    width: 600px;
+}
+.Organizer_info button:hover{
+    transition: all ease 0.3s;
+    box-shadow: 3px 3px 5px 5px #ffffff;
+    border: none;
+}

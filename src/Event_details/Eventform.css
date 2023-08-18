@@ -1,0 +1,90 @@
+.event_heading h1
+{
+    font-size: 50px;
+    color: #3E005B;
+    margin-bottom: 3px;
+    text-align: center;
+    font-weight: 700;
+    margin-top: 20px;
+}
+.Event_form
+{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    height: auto;
+    
+}
+.Event_details
+{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    height: auto;
+    width: 70%;
+    background-color:#E4A5FF;
+    box-shadow: 2px 2px 2px 2px #3E005B;
+    border-radius: 20px;
+    padding-top:10px ;
+    padding-bottom: 15px;
+    column-gap: 20px;
+}
+.event_form
+{
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+    width: 100%;
+}
+.event_form label
+{
+    font-size: 25px;
+    color: #3E005B;
+    font-weight: 500;
+}
+.event_form input
+{
+    width: 100%;
+    height: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 25px;
+    border: none;
+}
+.event_submit
+{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin-top: 30px;
+}
+.event_submit button{
+    height: 50px;
+    width: 220px;
+    border-radius: 15px;
+    background-color: #3E005B;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: none;
+}
+.event_submit button:hover{
+    transition: all ease 0.5s;
+    border: none;
+    background-color:#E4A5FF;
+    color: black;
+}

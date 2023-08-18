@@ -1,0 +1,36 @@
+.counter
+{
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 40px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.counter1
+{
+    background-color:#E4A5FF;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    width: 80%;
+}
+.counter1 p
+{
+    font-size: 100px;
+    font-weight: 900;
+}
+.counter1 h2
+{
+    font-size: 50px;
+    font-weight: 700;
+}
+.counter1 img
+{
+    height: 200px;
+    width: 200px;
+}
