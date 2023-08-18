@@ -1,32 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
 import eventlogo from '../Images/Event_logo.png'
 import './EventDisplay.css'
 import NavbarC from '../Navbar/NavbarC'
+import axios from '../axios'
 const EventDisplay = () => {
-    const [eventList,setEventList]=useState([
-       { event_name:"Credenz",
-        event_date:"24-03-2003",
-        sponsorship_amount:70000
-        },
-        { event_name:"Credenz",
-        event_date:"24-03-2003",
-        sponsorship_amount:70000
-        },
-        { event_name:"Credenz",
-        event_date:"24-03-2003",
-        sponsorship_amount:70000
-        },
-        { event_name:"Credenz",
-        event_date:"24-03-2003",
-        sponsorship_amount:70000
-        },
-        { event_name:"Credenz",
-        event_date:"24-03-2003",
-        sponsorship_amount:70000
-        }
-    ])
+    const [eventList,setEventList]=useState([]);
+
+    useEffect(()=>{
+      axios.get("/events").then((response)=>{
+        setEventList(response.data)
+      }).catch((err)=>console.log(err));
+    },[]);
+
   return (
     <div>
         <NavbarC></NavbarC>
@@ -37,7 +24,7 @@ const EventDisplay = () => {
             <h1>{val.event_name}</h1>
             <h3>📅 {val.event_date}</h3>
             <h3>💵 {val.sponsorship_amount}</h3>
-            <Link to='/event'><button>APPLY NOW </button></Link>
+            <Link to="/event" state={{val}}><button>APPLY NOW </button></Link>
         </div>)
     })}
     </div>
