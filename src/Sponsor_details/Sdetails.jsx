@@ -3,15 +3,19 @@ import './Sdetails.css'
 import axios from '../axios'
 import Sponsor_details from '../Images/Sponsor_details.png'
 import {useLocation} from 'react-router-dom'
+import { useCookies } from "react-cookie";
+import Login from '../Components/Login'
 const Sdetails = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(null);
   const location=useLocation()
   const data=location.state
   const [Sname,setSname]=useState("")
   const [Semail,setSemail]=useState("")
   const [Smob,setSmob]=useState("")
-  const SponsorDetails=()=>{
+  const SponsorDetails=(e)=>{
+    e.preventDefault()
     axios.post("/applications",{
-      sponsor_id:"user1",
+      sponsor_id:cookies.Id,
       event_id:data.event.val.event_id,
       sponsor_name:Sname,
       sponsor_phone:Smob,
@@ -23,34 +27,38 @@ const Sdetails = () => {
   console.log(data.event.val.event_id)
   return (
     <div>
-    <div className='Sdetails'>
-      <div className="Sponsor_image">
-        <img src={Sponsor_details} alt=""/>
-      </div>
-      <div className="Sponsor_form">
-        <h1>YOUR DETAILS</h1>
-        <form action="">
-            <label htmlFor="">Name</label>
-            <br />
-            <input type="text" name="Sname" onChange={(e)=>{
-          setSname(e.target.value)
-          }} />
-            <br />
-            <label htmlFor="">Email</label>
-            <br />
-            <input type="email" name="Semail" onChange={(e)=>{
-          setSemail(e.target.value)
-          }} />
-            <br />
-            <label htmlFor="">Mobile Number</label>
-            <br />
-            <input type="text" name="Smob" onChange={(e)=>{
-          setSmob(e.target.value)
-          }}/>
-        </form>
-        <button onClick={SponsorDetails}>Submit</button>
-      </div>
-    </div>
+      {
+        cookies.AuthToken ? (
+          <div className='Sdetails'>
+          <div className="Sponsor_image">
+            <img src={Sponsor_details} alt=""/>
+          </div>
+          <div className="Sponsor_form">
+            <h1>YOUR DETAILS</h1>
+            <form action="">
+                <label htmlFor="">Name</label>
+                <br />
+                <input type="text" name="Sname" onChange={(e)=>{
+              setSname(e.target.value)
+              }} />
+                <br />
+                <label htmlFor="">Email</label>
+                <br />
+                <input type="email" name="Semail" onChange={(e)=>{
+              setSemail(e.target.value)
+              }} />
+                <br />
+                <label htmlFor="">Mobile Number</label>
+                <br />
+                <input type="text" name="Smob" onChange={(e)=>{
+              setSmob(e.target.value)
+              }}/>
+            </form>
+            <button onClick={SponsorDetails}>Submit</button>
+          </div>
+        </div>
+        ):(<Login></Login>)
+      }
     </div>
   )
 }

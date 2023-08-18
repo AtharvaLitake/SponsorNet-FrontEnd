@@ -5,16 +5,22 @@ import CarouselC from './CarouselC'
 import NavbarC from '../Navbar/NavbarC'
 import Footer from '../Footer/Footer'
 import Count from './Count'
+import Login from '../Components/Login'
+import { useCookies } from "react-cookie";
 const Main = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(null);
   return (
-    <div>
-      <NavbarC></NavbarC>
-      <CarouselC></CarouselC>
-      <Sponsor></Sponsor>
-      <Organizer></Organizer> 
-      <Count></Count>
-      <Footer></Footer>
-    </div>
+    <>
+    {
+      cookies.AuthToken?(    <div>
+        <NavbarC></NavbarC>
+        <CarouselC></CarouselC>
+        <Sponsor></Sponsor>
+        <Organizer></Organizer> 
+        <Footer></Footer>
+      </div>):(<Login></Login>)
+    }
+    </>
   )
 }
 

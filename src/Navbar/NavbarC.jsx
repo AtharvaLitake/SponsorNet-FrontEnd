@@ -3,8 +3,17 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import "./NavbarC.css";
-import logo from '../Images/SponsorNet Logo.png'
+import logo from "../Images/SponsorNet Logo.png";
+import { useCookies } from "react-cookie";
+import { useNavigate, Link } from "react-router-dom";
 function NavbarC() {
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(null);
+  const LogOutHandler = () => {
+    removeCookie("Id");
+    removeCookie("AuthToken");
+    navigate("/");
+  };
   return (
     <Navbar collapseOnSelect expand="lg" className="bg">
       <Container>
@@ -12,9 +21,7 @@ function NavbarC() {
         <img src={logo} className="image" />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto nav_header">
-            SPONSORNET
-          </Nav>
+          <Nav className="me-auto nav_header">SPONSORNET</Nav>
           <Nav>
             <Nav.Link className="b" href="#">
               HOME
@@ -31,25 +38,26 @@ function NavbarC() {
             <Nav.Link className="b" href="#">
               ABOUT
             </Nav.Link>
-            <NavDropdown
-              className="ba"
-              title="MENU"
-              id="collasible-nav-dropdown"
-            >
-              <NavDropdown.Item className="back" id="new" href="#action/3.1">
-                Sponsornet
-              </NavDropdown.Item>
-              <NavDropdown.Item className="back" href="#action/3.2">
-                Sponsornet
-              </NavDropdown.Item>
-              <NavDropdown.Item className="back" href="#action/3.3">
-                Sponsornet
-              </NavDropdown.Item>
+            {cookies.AuthToken ? (
+              <NavDropdown
+                className="ba"
+                title="MENU"
+                id="collasible-nav-dropdown"
+              >
+                <NavDropdown.Item className="back" id="new">
+                  Sponsornet
+                </NavDropdown.Item>
+                <NavDropdown.Item className="back">Sponsornet</NavDropdown.Item>
 
-              <NavDropdown.Item className="back" href="#action/3.4">
-                Sponsornet links
-              </NavDropdown.Item>
-            </NavDropdown>
+                <NavDropdown.Item className="back" onClick={LogOutHandler}>
+                  LogOut
+                </NavDropdown.Item>
+              </NavDropdown>
+            ) : (
+              <Nav.Link className="b"  >
+                <Link to='/login' className="Link">LOGIN </Link>
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>

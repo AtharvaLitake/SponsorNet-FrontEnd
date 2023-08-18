@@ -3,7 +3,10 @@ import './Login.css'
 import login_page from '../Images/Login_Image.png'
 import { useState } from 'react'
 import axios from '../axios'
+import { useCookies } from "react-cookie";
+import {Link} from 'react-router-dom'
 const Register = () => {
+  const [cookies, setCookie, removeCookie] = useCookies(null);
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [cnfpassword, setCnfPassword] = useState("")
@@ -51,7 +54,9 @@ return (
       </form>
       <button onClick={SignUpUser}>Submit</button>
       <h3>Already a Member Yet ?</h3>
+      <Link to='/login'>
       <h3>Login Now</h3>
+      </Link>
     </div>
   </div>
 )

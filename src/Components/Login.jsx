@@ -3,7 +3,11 @@ import './Login.css'
 import login_page from '../Images/Login_Image.png'
 import {useState} from 'react'
 import axios from '../axios'
+import { useCookies } from "react-cookie";
+import { Link, useNavigate } from 'react-router-dom'
 const Login = () => {
+  const navigate = useNavigate();
+  const [cookies, setCookie, removeCookie] = useCookies(null);
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const LoginUser=async (e)=>{
@@ -18,8 +22,11 @@ const Login = () => {
     }
     else{
       alert("Logged in Successfully")
+      setCookie("Id", response.data.user_id);
+      setCookie("AuthToken", response.data.token);
+      navigate('/main')
     }
-    
+
 }
   return (
     <div className='login_Page'>
@@ -43,7 +50,9 @@ const Login = () => {
         </form>
         <button onClick={LoginUser}>Submit</button>
         <h3>Not a Member Yet ?</h3>
+        <Link to='/register'>
         <h3>Sign Up Now</h3>
+        </Link>
       </div>
     </div>
   )
