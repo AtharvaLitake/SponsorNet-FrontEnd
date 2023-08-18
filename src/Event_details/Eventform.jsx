@@ -9,6 +9,19 @@ const Eventform = () => {
   const [footfall,setfootfall]=useState("")
   const [amount,setamount]=useState("")
   const [deliverables,setdeliverables]=useState("")
+  const submitEvent=()=>{
+    axios.post("/events",{
+      event_name:Name,
+      event_date:date,
+      event_type:type,
+      event_footfall:footfall,
+      sponsorship_amount:amount,
+      deliverables:deliverables
+    }).then(()=>{
+      alert("SUCCESSFUL INSERTION")
+  })
+  console.log(date)
+}
   return (
     <div>
       <NavbarC></NavbarC>
@@ -27,13 +40,13 @@ const Eventform = () => {
             <label htmlFor="">Date</label>
             <br />
             <input type="date" name="type" onChange={(e)=>{
-              settype(e.target.value)
+              setdate(e.target.value)
             }}/>
             <br />
             <label htmlFor="">Type</label>
             <br />
             <input type="text" name="Name" onChange={(e)=>{
-              setName(e.target.value)
+              settype(e.target.value)
             }} autoComplete='off'/>
             <br />
         </div>
@@ -61,7 +74,7 @@ const Eventform = () => {
       </div>
 
       <div className="event_submit">
-        <button onClick={'"'}>Submit</button>
+        <button onClick={submitEvent}>Submit</button>
       </div>
     </div>
   )

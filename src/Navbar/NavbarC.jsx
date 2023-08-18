@@ -33,7 +33,7 @@ function NavbarC() {
             </Nav.Link>
             <NavDropdown
               className="ba"
-              title="MENUBAR"
+              title="MENU"
               id="collasible-nav-dropdown"
             >
               <NavDropdown.Item className="back" id="new" href="#action/3.1">

@@ -2,10 +2,25 @@ import React, { useState } from 'react'
 import './Sdetails.css'
 import axios from '../axios'
 import Sponsor_details from '../Images/Sponsor_details.png'
+import {useLocation} from 'react-router-dom'
 const Sdetails = () => {
+  const location=useLocation()
+  const data=location.state
   const [Sname,setSname]=useState("")
   const [Semail,setSemail]=useState("")
   const [Smob,setSmob]=useState("")
+  const SponsorDetails=()=>{
+    axios.post("/applications",{
+      sponsor_id:"user1",
+      event_id:data.event.val.event_id,
+      sponsor_name:Sname,
+      sponsor_phone:Smob,
+      application_status:"pending"
+      }).then(()=>{
+        alert("SUCCESSFUL INSERTION")
+    })
+  }
+  console.log(data.event.val.event_id)
   return (
     <div>
     <div className='Sdetails'>
@@ -33,7 +48,7 @@ const Sdetails = () => {
           setSmob(e.target.value)
           }}/>
         </form>
-        <button>Submit</button>
+        <button onClick={SponsorDetails}>Submit</button>
       </div>
     </div>
     </div>
