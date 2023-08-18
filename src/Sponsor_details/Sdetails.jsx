@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Sdetails.css'
-import axios from './axios'
+import axios from '../axios'
 import Sponsor_details from '../Images/Sponsor_details.png'
 const Sdetails = () => {
   const [Sname,setSname]=useState("")
