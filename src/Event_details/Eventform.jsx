@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Eventform.css'
+import axios from '../axios'
 import NavbarC from '../Navbar/NavbarC'
 const Eventform = () => {
   const [Name,setName]=useState("")
@@ -60,7 +61,7 @@ const Eventform = () => {
       </div>
 
       <div className="event_submit">
-        <button>Submit</button>
+        <button onClick={'"'}>Submit</button>
       </div>
     </div>
   )
