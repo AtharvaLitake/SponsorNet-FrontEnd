@@ -1,4 +1,5 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 import {useState} from 'react'
 import eventlogo from '../Images/Event_logo.png'
 import './EventDisplay.css'
@@ -36,7 +37,7 @@ const EventDisplay = () => {
             <h1>{val.event_name}</h1>
             <h3>📅 {val.event_date}</h3>
             <h3>💵 {val.sponsorship_amount}</h3>
-            <button>APPLY NOW ✅</button>
+            <Link to='/event'><button>APPLY NOW </button></Link>
         </div>)
     })}
     </div>

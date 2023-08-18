@@ -7,6 +7,7 @@ import Main from './Main/Main';
 import Eventform from './Event_details/Eventform';
 import Sdetails from './Sponsor_details/Sdetails';
 import EventDisplay from './Event_Display/EventDisplay';
+import SEvent from './Single_Event/SEvent';
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -25,6 +26,7 @@ function App() {
         <Route path='/eventDetails' element={<Eventform></Eventform>}></Route>
         <Route path='/sponsorDetails' element={<Sdetails></Sdetails>}></Route>
         <Route path='/eventDisplay' element={<EventDisplay></EventDisplay>}></Route>
+        <Route path='/event' element={<SEvent></SEvent>}></Route>
       </Routes>
       </BrowserRouter>
     </div>

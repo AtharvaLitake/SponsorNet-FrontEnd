@@ -18,7 +18,7 @@
     background-color:#E4A5FF;
     padding: 25px;
     border-radius: 20px;
-    box-shadow: 2px 2px 2px 2px #3E005B;
+    box-shadow: 1px 1px 1px 1px #3e005b4f;
     color: #3E005B;
     font-weight: 600;
     width: 85%;
@@ -45,11 +45,7 @@
     width: 180px;
     border-radius: 100%;
 }
-.event_info button:hover{
-    transition: all ease 0.3s;
-    box-shadow: 3px 3px 3px 3px #ffffff;
-    border: none;
-}
+
 .event_info:hover
 {
     transition: all ease 0.3s;
