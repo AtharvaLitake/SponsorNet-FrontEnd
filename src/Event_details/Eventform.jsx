@@ -25,7 +25,7 @@ const Eventform = () => {
       sponsorship_amount: amount,
       deliverables: deliverables
     }).then(() => {
-      alert("SUCCESSFUL INSERTION")
+      alert("EVENT ORGANIZED SUCCESSFULLY")
       navigate('/main')
     })
     console.log(date)
