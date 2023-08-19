@@ -4,7 +4,9 @@ import { useCookies } from "react-cookie";
 import Login from '../Components/Login';
 import NavbarC from '../Navbar/NavbarC';
 import axios from '../axios'
+import {Link,useNavigate} from 'react-router-dom'
 const Myevents = () => {
+  const navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const [eventlists, seteventLists] = useState([]);
   useEffect(() => {
@@ -18,8 +20,7 @@ const Myevents = () => {
         applicationStatus:"accepted"
       }).then(() => {
         alert("MSG SENT TO SPONSOR")
-        window.location.reload();
-       // navigate('/main')
+        navigate('/myevents')
       })
    }
    const rejectHandler=(id)=>{
@@ -27,8 +28,7 @@ const Myevents = () => {
         applicationStatus:"rejected"
       }).then(() => {
         alert("MSG SENT TO SPONSOR")
-        window.location.reload();
-        //navigate('/main')
+        navigate('/myevents')
       })
    }
   return (
