@@ -46,13 +46,13 @@ return (
         <br />
         <input type="password" name="password" onChange={(e) => {
           setPassword(e.target.value)
-        }} />
+        }} autoComplete='off'/>
         <br />
         <label htmlFor="">Confirm Password</label>
         <br />
         <input type="password" name="cnfpassword" onChange={(e) => {
           setCnfPassword(e.target.value)
-        }} />
+        }} autoComplete='off'/>
       </form>
       <button onClick={SignUpUser}>Submit</button>
       <h3>Already a Member Yet ?</h3>
