@@ -1,9 +1,10 @@
 <h1 align="center">SponsorNet</h1>
+<h1 align="center">HACK-FOR-GOOD HACKATHON</h1>
 <h3 align="center">Now Get and Apply For Sponsorships Easily</h3>
+<h3>SponsorNet is a website which aims to provide a centralized platform for sponsors and event organizers and reduce the communication barrier between them.</h3>
+
 
 ![SponsorNet-1](https://github.com/AtharvaLitake/SponsorNet-FrontEnd/assets/112816126/b6ae7291-bf33-495c-8d7b-2ec549060c4f)
-
-<p>SponsorNet is a website which aims to provide a centralized platform for sponsors and event organizers and reduce the communication barrier between them.</p>
 
 <h4>Our website makes use of Jwt authentication. User needs to create a account and login to our website in order to access thr functionalities.</h4>
 
