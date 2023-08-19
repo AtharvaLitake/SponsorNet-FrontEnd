@@ -17,7 +17,8 @@ const Myevents = () => {
     axios.put(`/applications/${id}`, {
         applicationStatus:"accepted"
       }).then(() => {
-        alert("SUCCESSFUL INSERTION")
+        alert("MSG SENT TO SPONSOR")
+        window.location.reload();
        // navigate('/main')
       })
    }
@@ -25,7 +26,8 @@ const Myevents = () => {
     axios.put(`/applications/${id}`, {
         applicationStatus:"rejected"
       }).then(() => {
-        alert("SUCCESSFUL INSERTION")
+        alert("MSG SENT TO SPONSOR")
+        window.location.reload();
         //navigate('/main')
       })
    }
