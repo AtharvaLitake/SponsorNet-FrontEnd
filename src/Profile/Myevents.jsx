@@ -20,7 +20,7 @@ const Myevents = () => {
         applicationStatus:"accepted"
       }).then(() => {
         alert("MSG SENT TO SPONSOR")
-        navigate('/myevents')
+        navigate('/main')
       })
    }
    const rejectHandler=(id)=>{
@@ -28,7 +28,7 @@ const Myevents = () => {
         applicationStatus:"rejected"
       }).then(() => {
         alert("MSG SENT TO SPONSOR")
-        navigate('/myevents')
+        navigate('/main')
       })
    }
   return (
