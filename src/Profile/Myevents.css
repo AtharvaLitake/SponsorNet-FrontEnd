@@ -1,0 +1,66 @@
+.event_block
+{
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+}
+.myevents
+{
+    background-color:#E4A5FF;
+    color: black;
+    width: 90%;
+    box-shadow: 2px 2px 2px 2px #3E005B ;
+    padding: 10px;
+    border-radius: 20px;
+}
+.myevents h1
+{
+    text-align: center;
+    margin-bottom: 15px;
+}
+.myevent
+{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.status
+{
+    display: grid;
+    grid-template-columns: 25% 25%;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-top: 20px;
+}
+.status button
+{
+    height: 50px;
+    width: 220px;
+    border-radius: 15px;
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: none; 
+    padding: 5px;
+}
+.accept
+{
+    background-color: #04c204;
+    box-shadow: 2px 2px 2px 2px green;
+}
+.reject
+{
+    background-color: #d30404;
+    box-shadow: 2px 2px 2px 2px rgb(114, 0, 0);
+}

@@ -3,11 +3,12 @@ import './Eventform.css'
 import axios from '../axios'
 import NavbarC from '../Navbar/NavbarC'
 import { useCookies } from "react-cookie";
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 import Home from '../Components/Home';
 import Login from '../Components/Login';
 const Eventform = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
+  const navigate = useNavigate();
   const [Name, setName] = useState("")
   const [date, setdate] = useState("")
   const [type, settype] = useState("")
@@ -24,6 +25,7 @@ const Eventform = () => {
       deliverables: deliverables
     }).then(() => {
       alert("SUCCESSFUL INSERTION")
+      navigate('/main')
     })
     console.log(date)
   }

@@ -4,9 +4,10 @@ import login_page from '../Images/Login_Image.png'
 import { useState } from 'react'
 import axios from '../axios'
 import { useCookies } from "react-cookie";
-import {Link} from 'react-router-dom'
+import {Link,useNavigate} from 'react-router-dom'
 const Register = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
+  const navigate = useNavigate();
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [cnfpassword, setCnfPassword] = useState("")
@@ -18,6 +19,7 @@ const Register = () => {
         user_password: password
       }).then(() => {
         alert("User Created")
+        navigate('/login')
       })
     }
     else {
