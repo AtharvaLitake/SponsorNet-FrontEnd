@@ -1,7 +1,7 @@
 <h1 align="center">SponsorNet</h1>
 <h1 align="center">HACK-FOR-GOOD HACKATHON</h1>
-<h3 align="center">Now Get and Apply For Sponsorships Easily</h3>
 <h3 align="center">FRONTEND TECHSTACK- REACT</h3>
+<h3 align="center">Now Get and Apply For Sponsorships Easily</h3>
 <h3>SponsorNet is a website which aims to provide a centralized platform for sponsors and event organizers and reduce the communication barrier between them.</h3>
 
 
