@@ -65,3 +65,6 @@ background-color: #3E005B !important;
   text-decoration: none;
   color: #ffffff;
 }
+.Link:hover{
+  color:#E4A5FF 
+}

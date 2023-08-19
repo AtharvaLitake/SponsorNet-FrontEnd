@@ -9,6 +9,16 @@
     margin-top: 20px;
     row-gap: 30px;
 }
+.headers
+{
+    text-align: center;
+    font-size: 55px;
+    color: #3E005B;
+}
+.headers h1
+{
+    font-weight: 700;
+}
 .application_details
 {
     display: grid;
@@ -53,4 +63,19 @@
 {
     font-size: 38px;
     font-weight: 500;
+}
+.accepted
+{
+    color: rgb(2, 168, 35);
+    font-weight: 800;
+}
+.rejected
+{
+    color:  rgb(143, 2, 2);
+    font-weight: 800;
+}
+.pending
+{
+    color: rgb(16, 2, 168);
+    font-weight: 800;
 }

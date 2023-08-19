@@ -40,18 +40,18 @@ const Login = () => {
             <br />
             <input type="email" name="email" onChange={(e)=>{
               setEmail(e.target.value)
-            }}/>
+            }} autoComplete='off'/>
             <br />
             <label htmlFor="">Password</label>
             <br />
             <input type="password" name="password" onChange={(e)=>{
               setPassword(e.target.value)
-            }}/>
+            }} autoComplete='off'/>
         </form>
         <button onClick={LoginUser}>Submit</button>
         <h3>Not a Member Yet ?</h3>
         <Link to='/register'>
-        <h3>Sign Up Now</h3>
+          <u><h3>Sign Up Now</h3></u>
         </Link>
       </div>
     </div>

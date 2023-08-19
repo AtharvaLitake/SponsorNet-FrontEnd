@@ -17,6 +17,7 @@ const Eventform = () => {
   const [deliverables, setdeliverables] = useState("")
   const submitEvent = () => {
     axios.post("/events", {
+      user_id:cookies.Id,
       event_name: Name,
       event_date: date,
       event_type: type,

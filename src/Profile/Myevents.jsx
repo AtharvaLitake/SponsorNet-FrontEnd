@@ -8,30 +8,52 @@ const Myevents = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const [eventlists, seteventLists] = useState([]);
   useEffect(() => {
-      axios.get(`/applications/${cookies.Id}`).then((response) => {
+      axios.get(`/events/${cookies.Id}`).then((response) => {
           seteventLists(response.data)
       }).catch((err) => console.log(err));
    }, []);
+   console.log(eventlists)
+   const acceptHandler=(id)=>{
+    axios.put(`/applications/${id}`, {
+        applicationStatus:"accepted"
+      }).then(() => {
+        alert("SUCCESSFUL INSERTION")
+       // navigate('/main')
+      })
+   }
+   const rejectHandler=(id)=>{
+    axios.put(`/applications/${id}`, {
+        applicationStatus:"rejected"
+      }).then(() => {
+        alert("SUCCESSFUL INSERTION")
+        //navigate('/main')
+      })
+   }
   return (
     <>
     {
         cookies.AuthToken?(
             <>
             <NavbarC></NavbarC>
+            <div className="headers">
+            <h1>MY EVENTS</h1>
+            </div>
             <div className='event_block'>
             {eventlists.map((val) => {
             return (
             <div className="myevents">
-                <h1>{val.event_name}</h1>
+                <h1><u>{val.event_name.toUpperCase()}</u></h1>
                 <div className="myevent">
-                    <h2>{val.sponsor_name}</h2>
-                    <h2>{val.sponsor_mobile}</h2>
-                    <h2>{val.sponsor_email}</h2>
+                    <h2>Name : {val.sponsor_name}</h2>
+                    <h2>Phone : {val.sponsor_phone}</h2>
+                    <h2>Email : {val.user_email}</h2>
                 </div>
-                <div className="status">
-                    <button className='accept'>ACCEPT ✅</button>
-                    <button className='reject'>REJECT ❌</button>
-                </div>
+                {
+                    val.application_status==='pending'||val.application_status===null?(<div className="status">
+                    <button className='accept' onClick={() => acceptHandler(val.application_id)}>ACCEPT ✅</button>
+                    <button className='reject'  onClick={() => rejectHandler(val.application_id)}>REJECT ❌</button>
+                </div>):(<>{val.application_status=="accepted"?(<div className='accepted'><h1 >{val.application_status.toUpperCase()}</h1></div>):(<div className="rejected"><h1 >{val.application_status.toUpperCase()}</h1></div>)}</>)
+                }
             </div>
             )})}
             </div>

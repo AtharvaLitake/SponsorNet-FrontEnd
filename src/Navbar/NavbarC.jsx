@@ -23,20 +23,25 @@ function NavbarC() {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto nav_header">SPONSORNET</Nav>
           <Nav>
-            <Nav.Link className="b" href="#">
-              HOME
+            <Nav.Link className="b">
+              <Link to="/" className="Link">
+                HOME
+              </Link>
             </Nav.Link>
             <Nav.Link className="b" href="#">
-              MAIN
+              <Link to="/main" className="Link">
+                MAIN
+              </Link>
             </Nav.Link>
             <Nav.Link className="b" href="#">
-              EVENTS
+              <Link to="/eventDetails" className="Link">
+                EVENT
+              </Link>
             </Nav.Link>
             <Nav.Link className="b" href="#">
-              APPLY
-            </Nav.Link>
-            <Nav.Link className="b" href="#">
-              ABOUT
+              <Link to="/eventDisplay" className="Link">
+                SPONSOR
+              </Link>
             </Nav.Link>
             {cookies.AuthToken ? (
               <NavDropdown
@@ -45,17 +50,26 @@ function NavbarC() {
                 id="collasible-nav-dropdown"
               >
                 <NavDropdown.Item className="back" id="new">
-                  Sponsornet
+                  <Link to="/myevents" className="Link">
+                    MyEvents
+                  </Link>
                 </NavDropdown.Item>
-                <NavDropdown.Item className="back">Sponsornet</NavDropdown.Item>
+                <NavDropdown.Item className="back">
+                  {" "}
+                  <Link to="/application" className="Link">
+                    Applications
+                  </Link>
+                </NavDropdown.Item>
 
                 <NavDropdown.Item className="back" onClick={LogOutHandler}>
                   LogOut
                 </NavDropdown.Item>
               </NavDropdown>
             ) : (
-              <Nav.Link className="b"  >
-                <Link to='/login' className="Link">LOGIN </Link>
+              <Nav.Link className="b">
+                <Link to="/login" className="Link">
+                  LOGIN{" "}
+                </Link>
               </Nav.Link>
             )}
           </Nav>

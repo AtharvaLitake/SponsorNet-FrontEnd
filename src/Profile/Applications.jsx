@@ -19,6 +19,9 @@ const Applications = () => {
             {cookies.AuthToken ? (
                 <>
                     <NavbarC></NavbarC>
+                <div className="headers">
+                    <h1>MY APPLICATIONS</h1>
+                </div>
                     <div className="application">
                         {applyList.map((val) => {
                             return (<div className="application_details">
@@ -42,7 +45,12 @@ const Applications = () => {
                                         <h3>{val.event_date}</h3>
                                     </div>
                                     <div className="app_name">
-                                        <h3>{val.application_status.toUpperCase()}</h3>
+                                        {
+                                            val.application_status==='pending'?(<h3 className="pending">{val.application_status.toUpperCase()}</h3>):(<>
+                                           { val.application_status==='accepted'?(<h3 className="accepted">{val.application_status.toUpperCase()}</h3>):(<h3 className="rejected">{val.application_status.toUpperCase()}</h3>)}
+                                            </>)
+                                        }
+                                        
                                     </div>
                                 </div>
                             </div>)

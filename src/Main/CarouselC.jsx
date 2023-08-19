@@ -1,15 +1,17 @@
 import React, {useState} from "react"; 
 import Carousel from 'react-bootstrap/Carousel';
 import poster1 from '../Images/SponsorNET.png';
+import poster2 from '../Images/Poster2.png'
+import poster3 from '../Images/Poster3.png'
 const slide = [
   {
    image:poster1,
   },
   {
-    image:poster1, 
+    image:poster2, 
    },
    {
-    image:poster1, 
+    image:poster3, 
    } 
 ]
 

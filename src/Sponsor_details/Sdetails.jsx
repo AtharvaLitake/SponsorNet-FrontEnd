@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 import './Sdetails.css'
 import axios from '../axios'
 import Sponsor_details from '../Images/Sponsor_details.png'
-import {useLocation} from 'react-router-dom'
+import {useLocation,useNavigate} from 'react-router-dom'
 import { useCookies } from "react-cookie";
 import Login from '../Components/Login'
 const Sdetails = () => {
+  const navigate=useNavigate()
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const location=useLocation()
   const data=location.state
@@ -21,7 +22,8 @@ const Sdetails = () => {
       sponsor_phone:Smob,
       application_status:"pending"
       }).then(()=>{
-        alert("SUCCESSFUL INSERTION")
+        alert("Applied Successfully")
+        navigate('/main')
     })
   }
   console.log(data.event.val.event_id)
