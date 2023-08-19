@@ -22,3 +22,7 @@
 <p>Once clicked on Organise Event, Organiser can now fill the event details and organize the event.Once organize the event will be visible to all the sponsors across globe in view events section of our website.</p>
 
 ![SponsorNet-6](https://github.com/AtharvaLitake/SponsorNet-FrontEnd/assets/112816126/c4ba7acd-674a-4a43-8313-47757fd586ca)
+
+<h3 align="center">DISPLAY OF EVENTS ORGANIZED</h3>
+
+![SponserNet-7](https://github.com/AtharvaLitake/SponsorNet-FrontEnd/assets/112816126/a90ebfb4-6937-4339-90da-b4f98b800f97)
