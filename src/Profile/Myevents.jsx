@@ -27,7 +27,7 @@ const Myevents = () => {
     axios.put(`/applications/${id}`, {
         applicationStatus:"rejected"
       }).then(() => {
-        alert("MSG SENT TO SPONSOR")
+        alert("MSG SENT TO SPONSOR");
         navigate('/main')
       })
    }
